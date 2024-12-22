@@ -1,0 +1,174 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sameksha Bafna | Portfolio</title>
+    <link rel="stylesheet" href="styles.css">
+    <script>
+        // Function to navigate between pages
+        function navigateTo(page) {
+            const pages = document.querySelectorAll(".page");
+            pages.forEach(p => (p.style.display = "none")); // Hide all pages
+            document.getElementById(page).style.display = "block"; // Show the target page
+        }
+
+        // Trigger download of resume
+        function downloadResume() {
+            const link = document.createElement("a");
+            link.href = "assetsimages/sameksha_bafna_resume.pdf"; // Corrected path
+            link.download = "Sameksha_Bafna_Resume.pdf";
+            link.click();
+        }
+
+        // Initialize to show the first page by default
+        document.addEventListener("DOMContentLoaded", () => {
+            navigateTo("page1");
+            showSection('education'); // Show the Education section by default
+        });
+
+        // Function to show specific section in page2
+        function showSection(sectionId) {
+            const sections = document.querySelectorAll(".section");
+            sections.forEach(section => {
+                section.style.display = "none"; // Hide all sections
+            });
+            document.getElementById(sectionId).style.display = "block"; // Show the selected section
+        }
+    </script>
+</head>
+<body>
+    <!-- First Page -->
+    <div id="page1" class="page">
+        <header>
+            <nav>
+                <h1>Sameksha Bafna</h1>
+            </nav>
+        </header>
+        <section class="hero">
+            <div class="hero-content">
+                <img src="assetsimages/profile%20photo.jpg" alt="Profile Photo" class="profile-pic">
+                <h2>Hi, I'm Sameksha Bafna</h2>
+                <p>Final-year BCA Student | Designer | Developer</p>
+                <div class="buttons">
+                    <button class="btn" onclick="navigateTo('page2')">View My Resume</button>
+                    <button class="btn" onclick="downloadResume()">Download Resume</button>
+                </div>
+            </div>
+        </section>
+    </div>
+
+    <!-- Second Page -->
+    <div id="page2" class="page" style="display: none;">
+        <header>
+            <nav>
+                <h1>Resume</h1>
+                <button class="back-btn" onclick="navigateTo('page1')">Back</button>
+            </nav>
+        </header>
+        <section class="content">
+            <!-- Navigation Buttons -->
+            <div class="buttons">
+                <button class="btn" onclick="showSection('education')">Education</button>
+                <button class="btn" onclick="showSection('research-projects')">Research Projects</button>
+                <button class="btn" onclick="showSection('projects')">Projects</button>
+                <button class="btn" onclick="showSection('achievements')">Achievements</button>
+                <button class="btn" onclick="showSection('certifications')">Certifications</button>
+                <button class="btn" onclick="showSection('contact')">Contact Me</button>
+            </div>
+
+            <!-- Education Section -->
+            <div id="education" class="section">
+                <h2>Education</h2>
+                <div class="card">
+                    <h3>KLE Technological University, Hubballi</h3>
+                    <p>Bachelor of Computer Applications (BCA) - CGPA: 9.06</p>
+                    <p>Focus on programming languages, data structures, machine learning, and web development.</p>
+                </div>
+                <div class="card">
+                    <h3>KLE INDP SC PU College, Gangavathi</h3>
+                    <p>Senior Secondary (XII) - 97.17%</p>
+                    <p>Studied core subjects including Mathematics, Physics, and Computer Science.</p>
+                </div>
+                <div class="card">
+                    <h3>Little Hearts School, Gangavathi</h3>
+                    <p>Secondary Education (X) - 92%</p>
+                    <p>Achieved high grades in all subjects, particularly in science and mathematics.</p>
+                </div>
+            </div>
+
+            <!-- Research Projects Section -->
+            <div id="research-projects" class="section" style="display: none;">
+                <h2>Research Projects</h2>
+                <div class="card">
+                    <h3>Dynamic Black Hole Attacks in WSNs</h3>
+                    <p>This project involved the development of a Swarm-Enabled Intrusion Detection System (SE-IDS) that utilizes Ant Colony Optimization (ACO) and Artificial Bee Colony (ABC) algorithms. The system aims to enhance security and efficiency in Wireless Sensor Networks (WSNs) by detecting dynamic black hole attacks, improving the overall reliability and performance of WSNs in hostile environments.</p>
+                </div>
+                <div class="card">
+                    <h3>Plastic Ban Impact on Ocean Industries</h3>
+                    <p>This research utilized clustering algorithms like K-means to analyze the impact of plastic bans on ocean-dependent industries such as fisheries and tourism. The project aimed to identify patterns in economic data to assess the financial consequences and the long-term sustainability of these industries post-ban.</p>
+                </div>
+            </div>
+
+            <!-- Projects Section -->
+            <div id="projects" class="section" style="display: none;">
+                <h2>Projects</h2>
+                <div class="card">
+                    <h3>Predicting Housing Prices</h3>
+                    <p>Developed a linear regression model using Python, Seaborn, and NumPy to predict housing prices in various locations. The model was trained using a dataset from Ames Housing and achieved an accuracy of 95%. It involved data preprocessing, feature selection, and building a predictive model that could help real estate companies and homebuyers assess property values.</p>
+                </div>
+                <div class="card">
+                    <h3>College Website</h3>
+                    <p>Designed and implemented a comprehensive college website using the MERN stack (MongoDB, Express.js, React, Node.js). This project management system allows students and faculty to track project details, assignments, reviews, and feedback, streamlining academic processes and enhancing communication within the college community.</p>
+                </div>
+                <div class="card">
+                    <h3>Age and Gender Detector</h3>
+                    <p>Created a real-time application using Python and Convolutional Neural Networks (CNNs) for detecting age and gender from images. The application achieved a recognition accuracy of 90%, and it was designed to be applied in security systems and social media platforms for targeted content delivery.</p>
+                </div>
+            </div>
+
+            <!-- Achievements Section -->
+            <div id="achievements" class="section" style="display: none;">
+                <h2>Achievements</h2>
+                <div class="card">
+                    <h3>1st Prize in Paper Presentation</h3>
+                    <p>Presented a research paper on heuristic approaches to detecting black hole attacks in wireless networks at a national conference, where I won the first prize for the most innovative and practical solution.</p>
+                </div>
+                <div class="card">
+                    <h3>1st Prize in Quiz Competition</h3>
+                    <p>Won the first prize in an inter-college quiz competition, where I demonstrated my technical knowledge in areas like algorithms, programming languages, and emerging technologies.</p>
+                </div>
+                <div class="card">
+                    <h3>1st Prize in Throwball Tournament</h3>
+                    <p>Secured the first prize in an inter-college throwball tournament, showcasing leadership and teamwork skills while promoting sportsmanship.</p>
+                </div>
+            </div>
+
+            <!-- Certifications Section -->
+            <div id="certifications" class="section" style="display: none;">
+                <h2>Certifications</h2>
+                <div class="card">
+                    <h3>IBM – Data Analysis for Machine Learning</h3>
+                    <p>This certification covers advanced data analysis techniques in the context of machine learning, enabling a deep understanding of how to clean, process, and interpret data to build predictive models.</p>
+                </div>
+                <div class="card">
+                    <h3>Udemy – Complete Python Bootcamp</h3>
+                    <p>Completed a comprehensive Python programming course on Udemy, which covers topics ranging from basic syntax to advanced features like web scraping, data analysis, and machine learning using Python libraries.</p>
+                </div>
+                <div class="card">
+                    <h3>NPTEL – Data Science for Engineers</h3>
+                    <p>Completed an advanced-level course offered by NPTEL, which covers a wide range of data science topics, including statistics, machine learning algorithms, and data visualization techniques, tailored specifically for engineers.</p>
+                </div>
+            </div>
+
+            <!-- Contact Section -->
+            <div id="contact" class="section" style="display: none;">
+                <h2>Contact Me</h2>
+                <p>Email: <a href="mailto:samekshabafna612@gmail.com">samekshabafna612@gmail.com</a></p>
+                <p>LinkedIn: <a href="https://linkedin.com/in/sameksha-bafna">linkedin.com/in/sameksha-bafna</a></p>
+                <p>GitHub: <a href="https://github.com/samekshabafna">github.com/samekshabafna</a></p>
+            </div>
+        </section>
+    </div>
+</body>
+</html>
